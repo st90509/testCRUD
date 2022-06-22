@@ -1,0 +1,37 @@
+﻿@page
+@model testcrud3.Pages.CRUD.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>TestDb</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TestDb.DatabaseVersion)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TestDb.DatabaseVersion)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TestDb.VersionDate)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TestDb.VersionDate)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TestDb.ModifiedDate)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TestDb.ModifiedDate)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.TestDb?.SystemInformationId">Edit</a> |
+    <a asp-page="./Index">回上一頁</a>
+</div>

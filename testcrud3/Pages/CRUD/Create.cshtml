@@ -1,0 +1,50 @@
+﻿@page
+@model testcrud3.Pages.CRUD.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>TestDb</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+          @*  <div class="form-group">
+                <label asp-for="TestDb.SystemInformationId" class="control-label"></label>
+                <input asp-for="TestDb.SystemInformationId" class="form-control" disabled="disabled" />
+                <span asp-validation-for="TestDb.SystemInformationId" class="text-danger"></span>
+            </div>*@
+            <div class="form-group">
+                <label asp-for="TestDb.DatabaseVersion" class="control-label"></label>
+                <input asp-for="TestDb.DatabaseVersion" class="form-control" />
+                <span asp-validation-for="TestDb.DatabaseVersion" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TestDb.VersionDate" class="control-label"></label>
+                <input asp-for="TestDb.VersionDate" class="form-control" />
+                <span asp-validation-for="TestDb.VersionDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TestDb.ModifiedDate" class="control-label"></label>
+                <input asp-for="TestDb.ModifiedDate" class="form-control" />
+                <span asp-validation-for="TestDb.ModifiedDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="新增" class="btn btn-primary" />
+                @*<input type="button" value="新增2" onclick="InsertAsync()" class="btn btn-primary" />*@
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">回上一頁</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
